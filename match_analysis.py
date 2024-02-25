@@ -44,7 +44,7 @@ def display_match_summary(summary):
     # Convert the summary dictionary to a DataFrame for a single row
     summary_df = pd.DataFrame([summary])
     # Display the DataFrame as a table in Streamlit
-    st.dataframe(summary_df, hide_index=True, use_container_width=True)
+    st.dataframe(summary_df)
 
 
 def get_innings_summary(data):
@@ -219,7 +219,7 @@ if selected_file:
 
         st.write("Innings breakdown for selected match:")
         innings_summary_df = pd.DataFrame(innings_summary).drop(columns=['cumulative_runs', 'runs_per_over', 'cumulative_wickets', 'wickets_per_over'], errors='ignore')
-        st.dataframe(innings_summary_df, hide_index=True, use_container_width=True)
+        st.dataframe(innings_summary_df)
 
         plot_innings_summaries(innings_summary)
 
