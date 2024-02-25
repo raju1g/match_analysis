@@ -207,7 +207,7 @@ if selected_file:
 
         st.write("Aggregate stats for teams of interest:")
         #st.table(aggregated_df.reset_index().rename(columns={'index': 'Team'}))
-        st.dataframe(aggregated_df.reset_index().rename(columns={'index': 'Team'}), use_container_width=True)
+        st.dataframe(aggregated_df.reset_index().rename(columns={'index': 'Team'}))
 
         st.markdown("""
         <br><br><br> 
