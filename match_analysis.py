@@ -8,15 +8,12 @@ from itertools import chain
 
 st.set_page_config(layout="wide")
 
-# Assuming the JSON files are stored in a directory called 'data'
-DATA_DIR = 'data2'
+DATA_DIR = 'data'
 
-# List of teams to filter by
 TEAMS_OF_INTEREST = ["Finland", "Guernsey", "Bulgaria", "Estonia", "Romania", "Malta"]
 
 
-# Define the function to load the JSON files and check if they contain the teams of interest
-@st.cache_data()
+@st.cache(allow_output_mutation=True)
 def load_filtered_matches(data_dir, teams):
     filtered_matches = []
     for file_name in os.listdir(data_dir):
@@ -27,8 +24,6 @@ def load_filtered_matches(data_dir, teams):
                     filtered_matches.append(file_name)
     return filtered_matches
 
-
-# Load matches that involve teams of interest
 filtered_matches = load_filtered_matches(DATA_DIR, TEAMS_OF_INTEREST)
 
 
