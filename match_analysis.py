@@ -125,8 +125,8 @@ def plot_innings_summaries(innings_summary):
 
     st.pyplot(fig)
 
-# Additional function to calculate wickets (assuming you have a way to extract this from the data)
-@st.cache_data()
+
+@st.cache(allow_output_mutation=True)
 def calculate_aggregates(data_dir, teams_of_interest):
     # Initialize the dictionary to hold aggregate data
     aggregates = {team: {'matches': 0, 'pp_runs': 0, 'be_runs': 0, 'pp_wickets': 0, 'be_wickets': 0} for team in teams_of_interest}
